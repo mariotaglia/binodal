@@ -24,8 +24,8 @@ endmodule
 module results
 real*16 x2alphafixed
 !real*16 x3alphafixed
-real*16 arrayalpha(2,400000)
-real*16 arraybeta(2,400000)
+real*16 arrayalpha(2,4000000)
+real*16 arraybeta(2,4000000)
 integer conteo
 endmodule
 
