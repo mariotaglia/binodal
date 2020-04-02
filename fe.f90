@@ -27,8 +27,8 @@ real*16 Free_energy2, sumpi, sumrho, sumel, sum, mupolA, mupolB, pilat, sumas,di
 real*16 F_Mix_OHmin, F_Conf, F_Eq, F_vdW, F_eps, F_electro
 integer i, iz, iiz
 !real*8 xtotal(-Xulimit:dimz+Xulimit) ! xtotal for poor solventireal
-real*16 xphiA,xphiB,xsolv,fa_A,fa_B,xmphiA,xmphiB
-real*16 frac(2)
+real*16 xphiA,xphiB,xsolv,fa_A,fa_B,xmphiA,xmphiB,fnc_a,fnc_B,fc_A,fc_B
+real*16 frac(6)
 
 ! Calculation of xsolvent
 xphiA=x(1)
@@ -37,6 +37,11 @@ xsolv=(1.0-xphiA-xphiB)
  call fracasos(x,frac)
 fa_A=frac(1)
 fa_B=frac(2)
+fnc_A=frac(3)
+fnc_B=frac(4)
+fc_A=frac(5)
+fc_B=frac(6)
+
 xmphiA=xphiA/(Ma*vp)
 xmphiB=xphiB/(Mb*vp)
 
@@ -58,8 +63,8 @@ Free_Energy = Free_Energy + F_Mix_s + F_mix_A +F_mix_B
 
 
 ! 4. Chemical Equilibrium
-  F_chem_A= (xphiA/vp)*((1.-fa_A)*log(1.0-fa_A)+fa_A*log(fa_A))
-  F_chem_B= (xphiB/vp)*((1.-fa_B)*log(1.0-fa_B)+fa_B*log(fa_B)) 
+  F_chem_A= (xphiA/vp)*((fnc_A)*log(fnc_A)+fa_A*log(fa_A)+fc_a*log(fc_A))
+  F_chem_B= (xphiB/vp)*((fnc_B)*log(fnc_B)+fa_B*log(fa_B)+fc_b*log(fc_b)) 
 
 Free_Energy = Free_Energy + F_chem_A +F_chem_B
 

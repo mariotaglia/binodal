@@ -10,10 +10,11 @@ real*16 phimin, phimax
 real*16 sigmaB
 real*16 csalt
 real*16 nor
-!real*16 pKaA
-!real*16 pkaB
-!real*16 pKaANa
-!real*16 pkaBCl
+real*16 KaA
+real*16 KaB
+real*16 Knew
+real*16 pKaA
+real*16 pkaB
 real*16 pkEo
 real*16 Keo
 !real*16 pHbulk

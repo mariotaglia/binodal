@@ -21,6 +21,9 @@ flagcrash=1
 	call readinput  ! reads input variables from file
 !	call allocation ! allocates memory
 	Keo=10**(-pKeo)
+	KaA=10**(-pKaA)
+	KaB=10**(-pKaB)
+	Knew=Keo*(KaB**(KaB/(1+KaB)))*(KaA**(KaA/(1+KaA)))
 	call solve(flagcrash)
 	!call fe(cc, ccc)         ! calculates and saves free energy to disk
 	call salvar(flagcrash)

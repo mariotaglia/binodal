@@ -35,14 +35,11 @@ read(8, *), phimin, phimax  !   Npasos
 !read(8, *), basura
 !read(8, *), csalt  ! salt concentration in bulk (Molar)
 !
-!read(8, *), basura
-!read(8, *), pKaA    ! pKaA of weak polyacid segments
+read(8, *), basura
+read(8, *), pKaA    ! pKaA of weak polyacid segments
 !
-!read(8, *), basura
-!read(8, *), pKaANa    ! pKaA of weak polyacid segments Hbond
-!
-!read(8, *), basura
-!read(8, *), pKaB    ! pKaB of weak polyacid segments
+read(8, *), basura
+read(8, *), pKaB    ! pKaB of weak polyacid segments
 !
 !read(8, *), basura
 !read(8, *), pKaBCl    ! pKaB of weak polyacid segments Hbond
