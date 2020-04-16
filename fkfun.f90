@@ -95,7 +95,8 @@ fealpha=elib
 call fe(vectbeta,elib)
 febeta=elib
 
-!print*, mu2beta,mu2alpha,mu3alpha,mu3beta
+print*, mu2beta,mu2alpha,mu3alpha,mu3beta
+stop
 ! ### EQUATIONS TO SOLVE
 
  f(1)= mu2alpha-mu2beta
