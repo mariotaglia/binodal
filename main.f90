@@ -23,7 +23,10 @@ flagcrash=1
 	Keo=10**(-pKeo)
 	KaA=10**(-pKaA)
 	KaB=10**(-pKaB)
-	Knew=Keo*(KaB**(KaB/(1+KaB)))*(KaA**(KaA/(1+KaA)))
+	KaHplus=10**(-pkaHplus)
+	KaOHmin=10**(-pkaOHmin)
+	!Knew=Keo*(KaB**(KaB/(1+KaB)))*(KaA**(KaA/(1+KaA)))
+	!Knew=Keo*KaB*KaA/((KaB+xmphi_OH_free)*(KaA+xmphi_H_free))
 	call solve(flagcrash)
 	!call fe(cc, ccc)         ! calculates and saves free energy to disk
 	call salvar(flagcrash)

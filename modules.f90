@@ -17,6 +17,11 @@ real*16 pKaA
 real*16 pkaB
 real*16 pkEo
 real*16 Keo
+real*16 KaHplus
+real*16 KaOHmin
+real*16 pKaHplus
+real*16 pKaOHmin
+
 !real*16 pHbulk
 !real*8 st
 !integer VUELTA

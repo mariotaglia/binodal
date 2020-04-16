@@ -41,12 +41,12 @@ read(8, *), pKaA    ! pKaA of weak polyacid segments
 read(8, *), basura
 read(8, *), pKaB    ! pKaB of weak polyacid segments
 !
-!read(8, *), basura
-!read(8, *), pKaBCl    ! pKaB of weak polyacid segments Hbond
+read(8, *), basura
+read(8, *), pKaHplus    ! pKa
 !
-!read(8, *), basura
-!read(8, *), pHbulk ! bulk pH
-!
+read(8, *), basura
+read(8, *), pKaOHmin ! 
+
 !read(8, *), basura
 !read(8, *), st     ! polymer-polymer attraction strenght in kBT
 

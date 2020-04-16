@@ -36,9 +36,12 @@ real*16 vectalpha(2),vectbeta(2)
 real*16 x2alpha,x3alpha,x2beta,x3beta
 real*16 mu2alpha,mu2beta,mu3alpha,mu3beta,fealpha,febeta
 real*16 potquim2,elib,potquim3
+real*16 xsolventalpha,xsolventbeta,xHplusalpha,xHplusbeta
+real*16 xOHminalpha,xOHminbeta
+
 
 ! Recovers xh and psi from x
-real*16 fracalpha(2), fracbeta(2)
+real*16 fracalpha(6), fracbeta(6)
 
 x3alpha=x(1)
 x2beta=x(2)
@@ -50,9 +53,27 @@ vectalpha(2)=x3alpha
 vectbeta(1)=x2beta
 vectbeta(2)=x3beta
 
+
+xsolventalpha=(1.0 -x2alpha-x3alpha)/(1.+KaHplus+KaOHmin)
+xsolventbeta=(1.0 -x2alpha-x3alpha)/(1.+KaHplus+KaOHmin)
+xHplusalpha=xsolventalpha*KaHplus
+xOHminalpha=xsolventalpha*KaOHmin
+xHplusbeta=xsolventbeta*KaHplus
+xOHminbeta=xsolventbeta*KaOHmin
+
+!print* , xsolventalpha,xsolventbeta
+!print* , xHplusalpha,xOHminalpha
+!print* , xHplusbeta,xOHminbeta
+!print* , x2alpha,x3alpha
+!print* , x2beta,x3beta
+!stop
+
 call fracasos(vectalpha,fracalpha)
 call fracasos(vectbeta,fracbeta)
-   
+ 
+!print* , fracalpha
+!print* , fracbeta
+!stop 
 ! Pot quimico respecto de phiA 
 Penality=((x2alpha-x2beta)**2+(x3alpha-x3beta)**2)
 
@@ -74,6 +95,7 @@ fealpha=elib
 call fe(vectbeta,elib)
 febeta=elib
 
+!print*, mu2beta,mu2alpha,mu3alpha,mu3beta
 ! ### EQUATIONS TO SOLVE
 
  f(1)= mu2alpha-mu2beta
@@ -88,6 +110,8 @@ febeta=elib
 -((x2alpha-x2beta)/(Ma*vp))*(mu2alpha+mu2beta )/2.&
 -((x3alpha-x3beta)/(Mb*vp))*(mu3beta+mu3alpha)/2.) /Penality !	
 
+!print*, f
+!stop
 !call fracasos(vectalpha,fracalpha)
 !call fracasos(vectbeta,fracbeta)
 !f(3) = x2alpha/(Ma*vp)+x3alpha/(Mb*vp)+(1-x2alpha-x3alpha)/vs
