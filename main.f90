@@ -14,6 +14,7 @@ use const
 
 	implicit none
 	integer i, flagcrash
+	real*16 pKw
 	!print*, 'Program Simple Brush'
 	!print*, 'GIT Version: ', _VERSION
 yes=0 ! es para  chequear si encuentra o no xalpha, xbeta
@@ -23,6 +24,10 @@ flagcrash=1
 	Keo=10**(-pKeo)
 	KaA=10**(-pKaA)
 	KaB=10**(-pKaB)
+	pKw=14.0
+	pOHbulk=pKw-pHbulk
+	cOHmin=10**(-pOHbulk)
+	cHplus=10**(-pHbulk)
 	KaHplus=10**(-pkaHplus)
 	KaOHmin=10**(-pkaOHmin)
 	!Knew=Keo*(KaB**(KaB/(1+KaB)))*(KaA**(KaA/(1+KaA)))

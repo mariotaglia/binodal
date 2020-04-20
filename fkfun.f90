@@ -68,6 +68,7 @@ xOHminbeta=xsolventbeta*KaOHmin
 !print* , x2beta,x3beta
 !stop
 
+
 call fracasos(vectalpha,fracalpha)
 call fracasos(vectbeta,fracbeta)
  
@@ -95,8 +96,8 @@ fealpha=elib
 call fe(vectbeta,elib)
 febeta=elib
 
-print*, mu2beta,mu2alpha,mu3alpha,mu3beta
-stop
+!print*, mu2beta,mu2alpha,mu3alpha,mu3beta
+!stop
 ! ### EQUATIONS TO SOLVE
 
  f(1)= mu2alpha-mu2beta
@@ -107,9 +108,9 @@ stop
 
 ! Recta tangente
 
- f(3)= (fealpha-febeta&
--((x2alpha-x2beta)/(Ma*vp))*(mu2alpha+mu2beta )/2.&
--((x3alpha-x3beta)/(Mb*vp))*(mu3beta+mu3alpha)/2.) /Penality !	
+ f(3)= (fealpha-febeta)/Penality !&
+!-((x2alpha-x2beta)/(Ma*vp))*(mu2alpha+mu2beta )/2.&
+!-((x3alpha-x3beta)/(Mb*vp))*(mu3beta+mu3alpha)/2.) /Penality !	
 
 !print*, f
 !stop

@@ -47,8 +47,8 @@ read(8, *), pKaHplus    ! pKa
 read(8, *), basura
 read(8, *), pKaOHmin ! 
 
-!read(8, *), basura
-!read(8, *), st     ! polymer-polymer attraction strenght in kBT
+read(8, *), basura
+read(8, *), pHbulk    ! polymer-polymer attraction strenght in kBT
 
 read(8, *), basura
 read(8, *), pKeo     ! polymer-polymer attraction strenght in kBT
