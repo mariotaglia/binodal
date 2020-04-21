@@ -21,7 +21,7 @@ fnc_a=frac(3)
 fnc_b=frac(4)
 fc_A=frac(5)
 fc_B=frac(6)
-potquim3= log(xmphiB*vs)-(Mb*vp/vs)*log(xsolv)+Mb*(log(fc_B)-log(cOHminbulk)+log(xsolv) )
+potquim3= log(xmphiB*vs)-(Mb*vp/vs)*log(xsolv)+Mb*(log(fc_B)-log(xOHmin)+log(xsolv) )
 !return (potquim3)
 !print* ,potquim3
 !stop
