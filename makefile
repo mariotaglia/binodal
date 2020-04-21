@@ -10,7 +10,7 @@ LFLAGS = -lm /usr/lib/x86_64-linux-gnu/librt.so  -L/usr/local/lib  -lsundials_fk
 
 # some definitions
 SHELL = /bin/bash
-FFLAGS=-O3#  -fbacktrace -fbounds-check #-O3
+FFLAGS= -fbacktrace -fbounds-check #-O3
 
 ifeq ($(HOST),mdq)
 LFLAGS = -lm /usr/lib/x86_64-linux-gnu/librt.so  -L/usr/local/lib  -lsundials_fkinsol -lsundials_kinsol -lsundials_fnvecserial -lsundials_nvecserial ${LIBS} -Wl,-rpath,/usr/local/lib

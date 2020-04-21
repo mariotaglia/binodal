@@ -26,10 +26,10 @@ flagcrash=1
 	KaB=10**(-pKaB)
 	pKw=14.0
 	pOHbulk=pKw-pHbulk
-	cOHmin=10**(-pOHbulk)
-	cHplus=10**(-pHbulk)
-	KaHplus=10**(-pkaHplus)
-	KaOHmin=10**(-pkaOHmin)
+	cOHminbulk=10**(-pOHbulk)
+	cHplusbulk=10**(-pHbulk)
+	!KaHplus=10**(-pkaHplus)
+	!KaOHmin=10**(-pkaOHmin)
 	!Knew=Keo*(KaB**(KaB/(1+KaB)))*(KaA**(KaA/(1+KaA)))
 	!Knew=Keo*KaB*KaA/((KaB+xmphi_OH_free)*(KaA+xmphi_H_free))
 	call solve(flagcrash)

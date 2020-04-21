@@ -54,12 +54,12 @@ vectbeta(1)=x2beta
 vectbeta(2)=x3beta
 
 
-xsolventalpha=(1.0 -x2alpha-x3alpha)/(1.+KaHplus+KaOHmin)
-xsolventbeta=(1.0 -x2alpha-x3alpha)/(1.+KaHplus+KaOHmin)
-xHplusalpha=xsolventalpha*KaHplus
-xOHminalpha=xsolventalpha*KaOHmin
-xHplusbeta=xsolventbeta*KaHplus
-xOHminbeta=xsolventbeta*KaOHmin
+xsolventalpha=(1.0 -x2alpha-x3alpha)/(1.+cHplusbulk+cOHminbulk)
+xsolventbeta=(1.0 -x2beta-x3beta)/(1.+cHplusbulk+cOHminbulk)
+xHplusalpha=xsolventalpha*cHplusbulk
+xOHminalpha=xsolventalpha*cOHminbulk
+xHplusbeta=xsolventbeta*cHplusbulk
+xOHminbeta=xsolventbeta*cOHminbulk
 
 !print* , xsolventalpha,xsolventbeta
 !print* , xHplusalpha,xOHminalpha

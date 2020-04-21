@@ -30,10 +30,10 @@ real*16 frac(6)
 ! Calculation of xsolvent
 xphiA=x(1)
 xphiB=x(2)
-xsolv=(1.0-xphiA-xphiB)/(1.+KaHplus+KaOHmin)
+xsolv=(1.0-xphiA-xphiB)/(1.+cHplusbulk+cOHminbulk)
 xmsolv=xsolv/vs
-xmHplus=xmsolv*KaHplus
-xmOHmin=xmsolv*KaOHmin
+xmHplus=xmsolv*cHplusbulk
+xmOHmin=xmsolv*cOhminbulk
 
  call fracasos(x,frac)
 fa_A=frac(1)

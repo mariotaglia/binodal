@@ -34,7 +34,7 @@ real*16 xiter
 
    nmax=npasos     ! npasos por consola i
    ngrid = npasosgrid
-   criterio=1E-3!criterio pra la norma
+   criterio=1E-4!criterio pra la norma
    gridpoints = 0
 
 ! #### GRID SEARCH

@@ -19,8 +19,8 @@ real*16 pkEo
 real*16 Keo
 real*16 KaHplus
 real*16 KaOHmin
-real*16 pKaHplus,pKHbulk,cHplus,pHbulk
-real*16 pKaOHmin,pOHbulk,cOHmin
+real*16 pKaHplus,pKHbulk,cHplusbulk,pHbulk
+real*16 pKaOHmin,pOHbulk,cOHminbulk
 
 !real*16 pHbulk
 !real*8 st

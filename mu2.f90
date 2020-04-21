@@ -12,8 +12,8 @@ xphiA=x(1)
 xphiB=x(2)
 xmphiA=xphiA/(Ma*vp)
 xmphiB=xphiB/(Mb*vp)
-xsolv=(1.0 -xphiA-xphiB)/(1.+KaHplus+KaOHmin)
-xHplus=xsolv*KaHplus
+xsolv=(1.0 -xphiA-xphiB)/(1.+cOHminbulk+cHplusbulk)
+xHplus=xsolv*cHplusbulk
 
 call fracasos(x,frac)
 !frac=fracasos(x,xphiB)
