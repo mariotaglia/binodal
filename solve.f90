@@ -20,8 +20,8 @@ real*8 x1g(3)
 integer ier, i,newt, j, ii, jj
 integer flagcrash
 real*16 potquim2,potquim3,mu2alpha,mu2beta
-real*16 xatest(2),xbtest(2),segsolalpha(2),segsolbeta(2)
-real*16 Mtemp
+real*16 xatest(2),xbtest(2),segsolalpha(2),segsolbeta(2),yy(2)
+real*16 Mtemp,frc(6)
 real*16 phi0
 integer flag
 integer ngrid
@@ -48,9 +48,9 @@ linearsolver = 2
    do j=1,ngrid
    do jj=1,ngrid
   
-      xiteri=phimin+float(i-1)*(phimax-phimin)/float(ngrid-1)
+      xiteri =phimin+float(i -1)*(phimax-phimin)/float(ngrid-1)
       xiterii=phimin+float(ii-1)*(phimax-phimin)/float(ngrid-1)
-      xiterj=phimin+float(j-1)*(phimax-phimin)/float(ngrid-1)
+      xiterj =phimin+float(j -1)*(phimax-phimin)/float(ngrid-1)
       xiterjj=phimin+float(jj-1)*(phimax-phimin)/float(ngrid-1)
    
       x2alphafixed= 10**xiteri ! x2phialpha
@@ -70,9 +70,13 @@ linearsolver = 2
       call call_kinsol(x1, x1g, ier)
 
        if (norma.lt.criterio) then !esto es para saber si encontró o no solución 
+ !        yy(1)=x2alphafixed
+  !       yy(2)=x1(1)
+  !       call fracasos(yy,frc)
          gridpoints = gridpoints + 1
          print*,'Grid Point OK',gridpoints
          print*,'x2alpha,x3alpha,x2beta,x3beta',x2alphafixed,x1(1),x1(2),x1(3)
+   !      print*,'fa_A,fa_B,fnc_A,fnc_B,fc_a,fc_B',frc
 
          arrayalphagrid(1,gridpoints)=x2alphafixed
          arrayalphagrid(2,gridpoints)=x1(1)
@@ -122,7 +126,10 @@ x3betaOK = arraybetagrid(2,ii)
          yes=yes+1
          print*,'Yes',yes
          print*,'x2alpha,x3alpha,x2beta,x3beta',x2alphafixed,x1(1),x1(2),x1(3)
-
+     !    yy(1)=x2alphafixed
+     !    yy(2)=x1(1)
+     !    call fracasos(yy,frc)
+     !    print!*,'fa_A,fa_B,fnc_A,fnc_B,fc_a,fc_B',frc
          x3alphaOK= x1(1)
          x2betaOK = x1(2)
          x3betaOK = x1(3)
